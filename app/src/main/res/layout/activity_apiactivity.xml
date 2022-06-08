@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".APIActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar4"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="@color/main"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar6"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="@color/main"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="692dp" />
+
+    <Button
+        android:id="@+id/btn_explore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Explore!!"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="581dp" />
+
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="txtNome"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="356dp" />
+
+    <TextView
+        android:id="@+id/txtDescrip"
+        android:layout_width="298dp"
+        android:layout_height="90dp"
+        android:text="txtDescrip"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="406dp" />
+
+    <TextView
+        android:id="@+id/txtCategoria"
+        android:layout_width="222dp"
+        android:layout_height="52dp"
+        android:text="txtCategoria"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="506dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="259dp"
+        android:layout_height="310dp"
+        app:srcCompat="@drawable/howl"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="46dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
