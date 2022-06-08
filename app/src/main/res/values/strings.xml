@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">FinalAPI</string>
+    <string name="User">Nome</string>
+    <string name="Username">Username</string>
+    <string name="Cadastro">Realize seu cadastro</string>
+    <string name="Email">Email:</string>
+    <string name="DataNasc">Data de Nascimento:</string>
+    <string name="Senha">Senha:</string>
+    <string name="ConfirmSenha">Confirme sua senha:</string>
+
+    <!-- -->
+
+
 </resources>
