@@ -18,7 +18,13 @@ public class MainActivity extends AppCompatActivity {
 
     //Testing GitHub
 
-    // Fork and cloning repository by *New > Project from Verson Control > Git Accont
+    // Create a Token > Settings > Version Control > GitHub > Log on
+
+    // VCS > GitHub > Create a repository > Commit > Projects > Add ...
+
+    // Fork and cloning repository by *New > Project from Verson Control > Git Accont > Select Repository > Clone
+
+
         public void TelaAPI(View view){
 
             Intent intent = new Intent(getApplicationContext(), APIActivity.class);
