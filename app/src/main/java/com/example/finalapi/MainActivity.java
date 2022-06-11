@@ -15,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
+
+    //Testing GitHub
+
+    // Fork and cloning repository by *New > Project from Verson Control > Git Accont
         public void TelaAPI(View view){
 
             Intent intent = new Intent(getApplicationContext(), APIActivity.class);
