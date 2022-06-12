@@ -31,5 +31,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+    public void TelaCadastro(View view){
+
+        Intent intent = new Intent(getApplicationContext(), CadastroActivity.class);
+        startActivity(intent);
+    }
+
     }
 
