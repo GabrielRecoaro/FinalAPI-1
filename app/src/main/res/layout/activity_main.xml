@@ -15,13 +15,14 @@
         android:layout_marginTop="31dp"
         android:layout_marginEnd="160dp"
         android:layout_marginBottom="110dp"
-        android:background="@color/white"
+        android:background="@color/black"
         android:onClick="TelaAPI"
         android:text="@string/Entrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:rippleColor="@color/black" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -49,8 +50,8 @@
         android:layout_marginBottom="43dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        android:textColor="@color/white"
+        android:text="@string/User"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +65,8 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="177dp"
         android:layout_marginBottom="31dp"
-        android:text="TextView"
-        android:textColor="@color/white"
+        android:text="@string/Cadastro"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/btnMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
