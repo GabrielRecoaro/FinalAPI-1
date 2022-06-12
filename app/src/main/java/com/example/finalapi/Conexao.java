@@ -25,15 +25,23 @@ public class Conexao extends SQLiteOpenHelper {
                 "ProfileUsuario BLOB," +
                 "EmailUsuario TEXT UNIQUE)");
 
-        db.execSQL("CREATE TABLE tbPersonagem("")");
+        db.execSQL("CREATE TABLE tbPersonagem(" +
+                "IdPersonagem TEXT PRIMARY KEY," +
+                "NomePersonagem TEXT NOT NULL," +
+                "FotoPersonagem BLOB,"+
+                "CaracteristicasPersonagem TEXT NOT NULL,"+
+                "LocatePersonagem TEXT NOT NULL)");
 
-        db.execSQL("CREATE TABLE tbFilme("")");
-
+        db.execSQL("CREATE TABLE tbFilme("+
+                "IdFilme TEXT PRIMARY KEY,"+
+                "DescricaoFilme TEXT NOT NULL,"+
+                "LancData TEXT NOT NULL,"+
+                "GeneroFilme TEXT NOT NULL,)");
+        /*
         db.execSQL("CREATE TABLE tbQuiz("")");
-
         db.execSQL("CREATE TABLE tbPergunta("")");
+        db.execSQL("CREATE TABLE tbResposta("")");*/
 
-        db.execSQL("CREATE TABLE tbResposta("")");
     }
 
     @Override
@@ -43,9 +51,12 @@ public class Conexao extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS tbUsuario");
         db.execSQL("DROP TABLE IF EXISTS tbPersonagem");
         db.execSQL("DROP TABLE IF EXISTS tbFilme");
+
+        /*
         db.execSQL("DROP TABLE IF EXISTS tbQuiz");
         db.execSQL("DROP TABLE IF EXISTS tbPergunta");
         db.execSQL("DROP TABLE IF EXISTS tbResposta");
+        */
 
         onCreate(db);
     }
