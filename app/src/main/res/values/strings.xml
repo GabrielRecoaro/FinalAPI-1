@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">FinalAPI</string>
+    <string name="app_name">Studio Ghibili</string>
     <string name="User">Nome</string>
     <string name="Username">Username</string>
+    <string name="API">Personagem</string>
+    <string name="Descrip">Descrição</string>
+    <string name="Caracteristicas">Caracteristicas</string>
     <string name="Cadastro">Realize seu cadastro</string>
     <string name="Email">Email:</string>
     <string name="DataNasc">Data de Nascimento:</string>

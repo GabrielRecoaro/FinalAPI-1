@@ -16,7 +16,7 @@ public class APIActivity extends AppCompatActivity {
 
     public void TelaMenu(View view){
 
-        Intent intent = new Intent(getApplicationContext(), APIActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 
