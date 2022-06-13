@@ -36,7 +36,7 @@ public class Conexao extends SQLiteOpenHelper {
                 "IdFilme TEXT PRIMARY KEY,"+
                 "DescricaoFilme TEXT NOT NULL,"+
                 "LancData TEXT NOT NULL,"+
-                "GeneroFilme TEXT NOT NULL,)");
+                "GeneroFilme TEXT NOT NULL)");
         /*
         db.execSQL("CREATE TABLE tbQuiz("")");
         db.execSQL("CREATE TABLE tbPergunta("")");

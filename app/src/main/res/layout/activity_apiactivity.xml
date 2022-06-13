@@ -6,6 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".APIActivity">
 
+    <TextView
+
+        android:id="@+id/tituloText"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="37dp"
+
+        android:layout_marginEnd="121dp"
+        android:layout_marginBottom="82dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnBusca"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+
+        android:id="@+id/autorText"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="47dp"
+
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="82dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBusca" />
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar4"
         android:layout_width="409dp"
@@ -34,17 +68,40 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_explore" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBusca" />
+
+    <EditText
+
+        android:id="@+id/livroInput"
+
+        android:layout_width="409dp"
+
+        android:layout_height="44dp"
+
+        android:layout_marginTop="7dp"
+
+        android:layout_marginBottom="6dp"
+
+        android:autofillHints=""
+        android:hint="@string/input_hint"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescrip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNome"
+        app:layout_constraintVertical_bias="0.666" />
 
     <Button
-        android:id="@+id/btn_explore"
+        android:id="@+id/btnBusca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="143dp"
         android:layout_marginBottom="63dp"
-        android:text="Explore!!"
+        android:onClick="buscaLivros"
+        android:text="Buscar"
         app:layout_constraintBottom_toTopOf="@+id/materialToolbar6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -70,7 +127,6 @@
         android:layout_height="90dp"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="49dp"
-        android:text="@string/Descrip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -84,7 +140,6 @@
         android:layout_height="52dp"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="125dp"
-        android:text="@string/Caracteristicas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
