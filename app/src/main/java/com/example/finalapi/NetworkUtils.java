@@ -15,7 +15,7 @@ public class NetworkUtils {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
     // Constantes utilizadas pela API
     // URL para a API de Livros do Google.
-    private static final String LIVROS_URL = "https://www.googleapis.com/books/v1/volumes?";
+    private static final String STUDIO_URL = "https://ghibliapi.herokuapp.com";
     // Parametros da string de Busca
     private static final String QUERY_PARAM = "q";
     // Limitador da qtde de resultados
@@ -28,7 +28,7 @@ public class NetworkUtils {
         String bookJSONString = null;
         try {
             // Construção da URI de Busca
-            Uri builtURI = Uri.parse(LIVROS_URL).buildUpon()
+            Uri builtURI = Uri.parse(STUDIO_URL).buildUpon()
                     .appendQueryParameter(QUERY_PARAM, queryString)
                     .appendQueryParameter(MAX_RESULTS, "10")
                     .appendQueryParameter(TIPO_IMPRESSAO, "books")

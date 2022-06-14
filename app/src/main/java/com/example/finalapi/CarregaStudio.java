@@ -5,11 +5,11 @@ import android.content.Context;
 import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
-public class CarregaLivros extends AsyncTaskLoader<String> {
+public class CarregaStudio extends AsyncTaskLoader<String> {
 
     private String mQueryString;
 
-    CarregaLivros(Context context, String queryString) {
+    CarregaStudio(Context context, String queryString) {
         super(context);
         mQueryString = queryString;
     }

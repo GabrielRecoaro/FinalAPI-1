@@ -57,7 +57,7 @@ public class APIActivity extends AppCompatActivity implements LoaderManager.Load
             networkInfo = connMgr.getActiveNetworkInfo();
         }
         /* Se a rede estiver disponivel e o campo de busca não estiver vazio
-         iniciar o Loader CarregaLivros */
+         iniciar o Loader CarregaStudio */
         if (networkInfo != null && networkInfo.isConnected()
                 && queryString.length() != 0) {
             Bundle queryBundle = new Bundle();
@@ -84,7 +84,7 @@ public class APIActivity extends AppCompatActivity implements LoaderManager.Load
         if (args != null) {
             queryString = args.getString("queryString");
         }
-        return new CarregaLivros(this, queryString);
+        return new CarregaStudio(this, queryString);
     }
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
