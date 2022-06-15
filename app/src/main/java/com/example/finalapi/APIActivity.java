@@ -22,26 +22,26 @@ import org.json.JSONObject;
 
 public class APIActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String>  {
 
-    private EditText nmLivro;
+    private EditText nmFilme;
     private TextView nmTitulo;
-    private TextView nmAutor;
+    private TextView nmElenco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apiactivity);
-        nmLivro = findViewById(R.id.livroInput);
+        nmFilme = findViewById(R.id.livroInput);
         nmTitulo = findViewById(R.id.tituloText);
-        nmAutor = findViewById(R.id.autorText);
+        nmElenco = findViewById(R.id.autorText);
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
         }
     }
 
-    public void buscaLivros(View view) {
-        // Recupera a string de busca.
-        String queryString = nmLivro.getText().toString();
-        // esconde o teclado qdo o botão é clicado
+    public void buscaElenco(View view) {
+
+        String queryString = nmFilme.getText().toString();
+
         InputMethodManager inputManager = (InputMethodManager)
                 getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputManager != null) {
@@ -49,30 +49,29 @@ public class APIActivity extends AppCompatActivity implements LoaderManager.Load
                     InputMethodManager.HIDE_NOT_ALWAYS);
         }
 
-        // Verifica o status da conexão de rede
+
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = null;
         if (connMgr != null) {
             networkInfo = connMgr.getActiveNetworkInfo();
         }
-        /* Se a rede estiver disponivel e o campo de busca não estiver vazio
-         iniciar o Loader CarregaStudio */
+
         if (networkInfo != null && networkInfo.isConnected()
                 && queryString.length() != 0) {
             Bundle queryBundle = new Bundle();
             queryBundle.putString("queryString", queryString);
             getSupportLoaderManager().restartLoader(0, queryBundle, this);
-            nmAutor.setText(R.string.str_empty);
+            nmElenco.setText(R.string.str_empty);
             nmTitulo.setText(R.string.loading);
         }
-        // atualiza a textview para informar que não há conexão ou termo de busca
+
         else {
             if (queryString.length() == 0) {
-                nmAutor.setText(R.string.str_empty);
+                nmElenco.setText(R.string.str_empty);
                 nmTitulo.setText(R.string.no_search_term);
             } else {
-                nmAutor.setText(" ");
+                nmElenco.setText(" ");
                 nmTitulo.setText(R.string.no_network);
             }
         }
@@ -89,51 +88,50 @@ public class APIActivity extends AppCompatActivity implements LoaderManager.Load
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         try {
-            // Converte a resposta em Json
+
             JSONObject jsonObject = new JSONObject(data);
-            // Obtem o JSONArray dos itens de livros
+
             JSONArray itemsArray = jsonObject.getJSONArray("items");
-            // inicializa o contador
+
             int i = 0;
             String titulo = null;
             String autor = null;
-            // Procura pro resultados nos itens do array
+
             while (i < itemsArray.length() &&
                     (autor == null && titulo == null)) {
-                // Obtem a informação
+
                 JSONObject book = itemsArray.getJSONObject(i);
                 JSONObject volumeInfo = book.getJSONObject("volumeInfo");
-                //  Obter autor e titulo para o item,
-                // erro se o campo estiver vazio
+
                 try {
                     titulo = volumeInfo.getString("title");
                     autor = volumeInfo.getString("authors");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                // move para a proxima linha
+
                 i++;
             }
-            //mostra o resultado qdo possivel.
+
             if (titulo != null && autor != null) {
                 nmTitulo.setText(titulo);
-                nmAutor.setText(autor);
-                //nmLivro.setText(R.string.str_empty);
+                nmElenco.setText(autor);
+
             } else {
-                // If none are found, update the UI to show failed results.
+
                 nmTitulo.setText(R.string.no_results);
-                nmAutor.setText(R.string.str_empty);
+                nmElenco.setText(R.string.str_empty);
             }
         } catch (Exception e) {
-            // Se não receber um JSOn valido, informa ao usuário
+
             nmTitulo.setText(R.string.no_results);
-            nmAutor.setText(R.string.str_empty);
+            nmElenco.setText(R.string.str_empty);
             e.printStackTrace();
         }
     }
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {
-        // obrigatório implementar, nenhuma ação executada
+
     }
 /*
     @Override

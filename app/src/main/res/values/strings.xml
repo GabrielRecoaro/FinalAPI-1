@@ -22,11 +22,11 @@
         It was popularised in the 1960s with the release of Letraset sheets</string>
 
 
-    <string name="instructions">Informe o nome de um livro para ver seu autor </string>
+    <string name="instructions">Informe o nome de um filme para ver seu elenco </string>
 
-    <string name="button_text">Busca Livros</string>
+    <string name="button_text">Busca Filmes</string>
 
-    <string name="input_hint">Titulo Livro</string>
+    <string name="input_hint">Titulo Filme</string>
 
     <string name="loading">Carregando…</string>
 

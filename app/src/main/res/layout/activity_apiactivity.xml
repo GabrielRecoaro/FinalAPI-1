@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".APIActivity">
-<!--
+
     <TextView
 
         android:id="@+id/tituloText"
@@ -100,7 +100,7 @@
         android:layout_marginTop="23dp"
         android:layout_marginEnd="143dp"
         android:layout_marginBottom="63dp"
-        android:onClick="buscaLivros"
+        android:onClick="buscaElenco"
         android:text="Buscar"
         app:layout_constraintBottom_toTopOf="@+id/materialToolbar6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -175,9 +175,9 @@
         app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar4"
-        app:layout_constraintVertical_bias="0.0" />-->
+        app:layout_constraintVertical_bias="0.0" />
 
-
+<!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -257,7 +257,7 @@
 
             />
     </LinearLayout>
-
+-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
