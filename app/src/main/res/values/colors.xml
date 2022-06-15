@@ -10,4 +10,8 @@
     <color name="main">#ACE9FF</color>
     <color name="second">#1E586D</color>
     <color name="red">#FF1616</color>
+
+    <color name="colorPrimary">#239DDC</color>
+    <color name="colorButton">#293961</color>
+    <color name="rowFilmColor">#000000</color>
 </resources>

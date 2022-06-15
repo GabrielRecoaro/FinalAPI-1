@@ -7,7 +7,6 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -20,28 +19,26 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class APIActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String>  {
-
+public class APIActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
     private EditText nmFilme;
     private TextView nmTitulo;
-    private TextView nmElenco;
+    private TextView nmDados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apiactivity);
-        nmFilme = findViewById(R.id.livroInput);
-        nmTitulo = findViewById(R.id.tituloText);
-        nmElenco = findViewById(R.id.autorText);
+        setContentView(R.layout.activity_main);
+        nmFilme = findViewById(R.id.edtxtRecebe);
+        nmTitulo = findViewById(R.id.txtTitulo);
+        nmDados = findViewById(R.id.txtDados);
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
         }
     }
 
-    public void buscaElenco(View view) {
+    public void buscaFilme(View view) {
 
         String queryString = nmFilme.getText().toString();
-
         InputMethodManager inputManager = (InputMethodManager)
                 getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputManager != null) {
@@ -62,16 +59,16 @@ public class APIActivity extends AppCompatActivity implements LoaderManager.Load
             Bundle queryBundle = new Bundle();
             queryBundle.putString("queryString", queryString);
             getSupportLoaderManager().restartLoader(0, queryBundle, this);
-            nmElenco.setText(R.string.str_empty);
+            nmDados.setText(R.string.str_empty);
             nmTitulo.setText(R.string.loading);
         }
 
         else {
             if (queryString.length() == 0) {
-                nmElenco.setText(R.string.str_empty);
+                nmDados.setText(R.string.str_empty);
                 nmTitulo.setText(R.string.no_search_term);
             } else {
-                nmElenco.setText(" ");
+                nmDados.setText(" ");
                 nmTitulo.setText(R.string.no_network);
             }
         }
@@ -83,7 +80,7 @@ public class APIActivity extends AppCompatActivity implements LoaderManager.Load
         if (args != null) {
             queryString = args.getString("queryString");
         }
-        return new CarregaStudio(this, queryString);
+        return new CarregaFilmes(this, queryString);
     }
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
@@ -95,17 +92,17 @@ public class APIActivity extends AppCompatActivity implements LoaderManager.Load
 
             int i = 0;
             String titulo = null;
-            String autor = null;
+            String descr = null;
 
             while (i < itemsArray.length() &&
-                    (autor == null && titulo == null)) {
+                    (descr == null && titulo == null)) {
 
                 JSONObject book = itemsArray.getJSONObject(i);
                 JSONObject volumeInfo = book.getJSONObject("volumeInfo");
 
                 try {
                     titulo = volumeInfo.getString("title");
-                    autor = volumeInfo.getString("authors");
+                    descr = volumeInfo.getString("description");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -113,19 +110,19 @@ public class APIActivity extends AppCompatActivity implements LoaderManager.Load
                 i++;
             }
 
-            if (titulo != null && autor != null) {
+            if (titulo != null && descr != null) {
                 nmTitulo.setText(titulo);
-                nmElenco.setText(autor);
+                nmDados.setText(descr);
 
             } else {
 
                 nmTitulo.setText(R.string.no_results);
-                nmElenco.setText(R.string.str_empty);
+                nmDados.setText(R.string.str_empty);
             }
         } catch (Exception e) {
 
             nmTitulo.setText(R.string.no_results);
-            nmElenco.setText(R.string.str_empty);
+            nmDados.setText(R.string.str_empty);
             e.printStackTrace();
         }
     }
@@ -133,17 +130,4 @@ public class APIActivity extends AppCompatActivity implements LoaderManager.Load
     public void onLoaderReset(@NonNull Loader<String> loader) {
 
     }
-/*
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apiactivity);
-    }*/
-
-    public void TelaMenu(View view){
-
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-    }
-
 }

@@ -24,18 +24,18 @@ public class MainActivity extends AppCompatActivity {
 
     // Fork and cloning repository by *New > Project from Verson Control > Git Accont > Select Repository > Clone
 
+    public void TelaList(View view) {
 
-        public void TelaAPI(View view){
+        Intent intent = new Intent(getApplicationContext(), APIActivity.class);
+        startActivity(intent);
+    }
 
-            Intent intent = new Intent(getApplicationContext(), APIActivity.class);
-            startActivity(intent);
-        }
-
-    public void TelaCadastro(View view){
+    public void TelaCadastro(View view) {
 
         Intent intent = new Intent(getApplicationContext(), CadastroActivity.class);
         startActivity(intent);
     }
 
-    }
+
+}
 

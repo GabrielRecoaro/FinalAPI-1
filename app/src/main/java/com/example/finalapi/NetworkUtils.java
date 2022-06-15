@@ -13,16 +13,12 @@ import java.net.URL;
 public class NetworkUtils {
 
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
-
-    private static final String STUDIO_URL = "https://ghibliapi.herokuapp.com";
-
-    private static final String QUERY_PARAM = "Personagem";
-
+    private static final String STUDIO_URL = "https://ghibliapi.herokuapp.com/films/58611129-2dbc-4a81-a72f-77ddfc1b1b49";
+    private static final String QUERY_PARAM = "q";
     private static final String MAX_RESULTS = "maxResults";
-
     private static final String TIPO_IMPRESSAO = "printType";
-    static String buscaInfosLivro(String queryString) {
 
+    static String buscaInfoFilme(String queryString) {
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
         String bookJSONString = null;
@@ -31,7 +27,7 @@ public class NetworkUtils {
             Uri builtURI = Uri.parse(STUDIO_URL).buildUpon()
                     .appendQueryParameter(QUERY_PARAM, queryString)
                     .appendQueryParameter(MAX_RESULTS, "10")
-                    .appendQueryParameter(TIPO_IMPRESSAO, "filmes")
+                    .appendQueryParameter(TIPO_IMPRESSAO, "titles")
                     .build();
 
             URL requestURL = new URL(builtURI.toString());
@@ -74,6 +70,5 @@ public class NetworkUtils {
 
         Log.d(LOG_TAG, bookJSONString);
         return bookJSONString;
-
     }
 }

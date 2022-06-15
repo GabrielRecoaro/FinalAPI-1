@@ -37,4 +37,14 @@
     <string name="no_network">verifique sua conexão.</string>
     <string name="str_empty">" "</string>
 
+
+    <string name="welcome_text">Welcome to you to see more information\nabout Studio Ghibli\'s films</string>
+    <string name="welcome_button">GO</string>
+    <string name="totoroContentDescription">Official logo of Studio Ghibli</string>
+    <string name="film_title_text">Film title</string>
+    <string name="film_poster">Film poster</string>
+    <string name="player_error">Error initializing YouTube player: %s</string>
+    <string name="seek_to">Jump To</string>
+    <string name="seek_to_hint">Seconds</string>
+
 </resources>

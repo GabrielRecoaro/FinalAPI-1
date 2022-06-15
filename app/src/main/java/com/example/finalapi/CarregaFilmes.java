@@ -5,11 +5,10 @@ import android.content.Context;
 import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
-public class CarregaStudio extends AsyncTaskLoader<String> {
+public class CarregaFilmes extends AsyncTaskLoader<String> {
 
     private String mQueryString;
-
-    CarregaStudio(Context context, String queryString) {
+    CarregaFilmes(Context context, String queryString) {
         super(context);
         mQueryString = queryString;
     }
@@ -21,6 +20,7 @@ public class CarregaStudio extends AsyncTaskLoader<String> {
     @Nullable
     @Override
     public String loadInBackground() {
-        return NetworkUtils.buscaInfosLivro(mQueryString);
+        return NetworkUtils.buscaInfoFilme(mQueryString);
     }
 }
+

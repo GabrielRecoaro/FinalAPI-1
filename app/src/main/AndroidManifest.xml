@@ -4,6 +4,7 @@
     package="com.example.finalapi">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,10 +16,10 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".CadastroActivity"
+            android:name=".APIActivity"
             android:exported="false" />
         <activity
-            android:name=".APIActivity"
+            android:name=".CadastroActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -29,17 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <!--<receiver android:name=".ExampleAppWidgetProvider">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/example_appwidget_info" />
-        </receiver>-->
-
     </application>
 
 </manifest>

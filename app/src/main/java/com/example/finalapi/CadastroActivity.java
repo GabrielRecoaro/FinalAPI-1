@@ -13,10 +13,10 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
     }
-
-    public void TelaAPI(View view){
+    public void TelaList(View view) {
 
         Intent intent = new Intent(getApplicationContext(), APIActivity.class);
         startActivity(intent);
     }
+
 }
